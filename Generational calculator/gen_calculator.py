@@ -21,7 +21,6 @@ for i in range(5000):
 for generation in range(generations):
     new_population = []
 
-    #print(population)
     fitted_population = []
     for gene in population:
         fitted_population.append([fitness(gene), gene])
@@ -32,8 +31,6 @@ for generation in range(generations):
         print(fitted_population[0])
         print(function(fitted_population[0][1][0], fitted_population[0][1][1], fitted_population[0][1][2]) + 10)
         break
-    print(fitted_population)
-
 
 
     best_genes = [best[1] for best in fitted_population[:100]]
