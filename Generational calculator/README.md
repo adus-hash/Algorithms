@@ -31,7 +31,7 @@ for i in range(5000):
     population.append([random.uniform(0, 1000), random.uniform(0, 1000), random.uniform(0, 1000)])
 ```
 
-In this generation for loop we create new new_population array, it will contain our new population. In the second for loop we fitness all chromosomes in population and store their fitness, then we sort our fitted_population so we know which chromosomes have highest fit score. Then we take 2 from best 100 chromosemes and crossover then to combine best genes and mutate then to maintain genetic diversity and we add our child to new_population and new generation can start. This proccess repeat for 2000 generations and then we get our best fitting numbers for our x, y, z paramaters for function.
+In this generation for loop we create new new_population array, it will contain our new population. In the second for loop we fitness all chromosomes in population and store their fitness, then we sort our fitted_population so we know which chromosomes have highest fit score. Then we take 2 from best 100 chromosemes and crossover then to combine best genes and mutate then to maintain genetic diversity and we add our child to new_population and new generation can start. This proccess repeat for 2000 generations or if best_fitted_chromosome hit 1000 fit score and then we get our best fitting numbers for our x, y, z paramaters for function.
 
 ```Python
 for generation in range(generations):
@@ -42,6 +42,11 @@ for generation in range(generations):
         fitted_population.append([fitness(gene), gene])
 
     fitted_population.sort(reverse=True)
+    
+    if fitted_population[0][0] > 1000:
+        print(fitted_population[0])
+        print(function(fitted_population[0][1][0], fitted_population[0][1][1], fitted_population[0][1][2]) + 10)
+        break
 
     best_genes = [best[1] for best in fitted_population[:100]]
     for i in range(1000):
