@@ -8,6 +8,6 @@ Imagine one neuron with two inputs, our output will be calculated as followed in
 
 ![NN](https://github.com/adus-hash/Algorithms/assets/66412479/5f497606-cd01-4b40-ab8e-52f8a535af00)
 
-Such network is very flexible and vey capable. We can use it to classify or predict. In our project we use it to solve XOR problem, as we can from graph below this problem can't be solved using linear function
+Such network is very flexible and vey capable. We can use it to classify or predict. In our project we use it to solve XOR problem, as we can from graph below this problem can't be solved using linear function, so if we substitute (0, 0) or (1, 1) our model should output 0 and for (0, 1) or (1, 0) model should output 1.
 
 ![XOR-Problem-768x433](https://github.com/adus-hash/Algorithms/assets/66412479/9b6a880a-a3f2-4e04-a21d-d063e357a18c)
